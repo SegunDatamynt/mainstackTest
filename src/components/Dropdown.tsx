@@ -8,13 +8,6 @@ import DropDwnTransactionType from "./DropDwnTransactionType.tsx"
 import DropDownTransactionStatus from "./TransactionStatus.tsx";
 
 
-function classNames(...classes) {
-
-
-
-    return classes.filter(Boolean).join(' ')
-}
-
 function DropdownMenu (){
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -25,6 +18,7 @@ function DropdownMenu (){
     const handleCloseButtonClick = () => {
         setMenuOpen(false);
     };
+    // @ts-ignore
     return(
         <div>
 
@@ -85,7 +79,7 @@ function DropdownMenu (){
                                         views={['year', 'month', 'day']}
                                         className="rounded-md border-2 border-black bg-[#EFF1F6] p-2"
                                         value="  December 13, 2023"
-                                     onChange={""}/>
+                                      onChange=""/>
 
                                 </div>
                                 <div className="col-span-1">

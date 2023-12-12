@@ -1,21 +1,11 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import axios from 'axios';
-import Section1 from '../components/Section1';
+ import Section1 from '../components/Section1';
 
  jest.mock('axios');
 
-const mockUserWallet = {
-    balance: '1000',
-    ledger_balance: '800',
-    total_payout: '1200',
-    total_revenue: '1500',
-    pending_payout: '300',
-};
+
 
 describe('Section1', () => {
-    beforeEach(() => {
-         axios.get.mockResolvedValue({ data: mockUserWallet });
-    });
 
     afterEach(() => {
          jest.clearAllMocks();

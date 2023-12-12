@@ -22,7 +22,7 @@ export default function TransactionDetails(){
                 setUserTransactions(response.data);
                 console.log(response.data);
 
-                 response.data.forEach((transaction) => {
+                 response.data.forEach((transaction:any) => {
                      const { metadata } = transaction;
                     if (metadata) {
                         if (metadata.name) {

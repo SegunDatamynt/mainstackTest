@@ -1,19 +1,12 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import axios from 'axios';
 import Navbar from '../components/Navbar.tsx';
 
  jest.mock('axios');
 
-const mockUserInfo = {
-    first_name: 'John',
-    last_name: 'Doe',
-    email: 'john.doe@example.com',
-};
+
 
 describe('Navbar', () => {
-    beforeEach(() => {
-         axios.get.mockResolvedValue({ data: mockUserInfo });
-    });
+
 
     afterEach(() => {
          jest.clearAllMocks();
