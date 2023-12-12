@@ -2,11 +2,10 @@ import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import IconButton from "../assets/iconbutton.png"
-import DatePicker from 'react-datepicker'
+// import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import DropDwnTransactionType from "./DropDwnTransactionType.tsx"
 import DropDownTransactionStatus from "./TransactionStatus.tsx";
-
 
 function DropdownMenu (){
     const [menuOpen, setMenuOpen] = useState(false);
@@ -41,17 +40,20 @@ function DropdownMenu (){
                     leave="transition ease-in duration-75"
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
-                    style={{
-                        position: "fixed",
-                        top: "0",
-                        right: "0",
-                        backgroundColor: "#FFF",
-                        border: "1px solid #CCC",
-                        zIndex: 1000,
-                        transition: "transform 0.6s ease-in-out",
-                        transform: "translateY(5)",
-                    }}
+
                 >
+                    <div
+                        style={{
+                            position: "fixed",
+                            top: "0",
+                            right: "0",
+                            backgroundColor: "#FFF",
+                            border: "1px solid #CCC",
+                            zIndex: 1000,
+                            transition: "transform 0.6s ease-in-out",
+                            transform: "translateY(5)",
+                        }}
+                    >
                     <Menu.Items className="absolute  right-0 z-10 mt-2 w-auto h-auto origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                             <div className="justify-between flex p-4">
@@ -73,25 +75,19 @@ function DropdownMenu (){
                             <div className="p-2">
                                 <p className="text-[16px] mx-2 p-2 font-semibold">Date Range</p>
                             <div className="grid grid-cols-2 p-2">
-                                <div className="col-span-1">
-                                    <DatePicker
-                                        label={['year', 'month', 'day']}
-                                        views={['year', 'month', 'day']}
-                                        className="rounded-md border-2 border-black bg-[#EFF1F6] p-2"
-                                        value="  December 13, 2023"
-                                      onChange=""/>
 
-                                </div>
                                 <div className="col-span-1">
                                     <div className="col-span-1">
-                                        <DatePicker
-                                            label={['year', 'month', 'day']}
-                                            views={['year', 'month', 'day']}
-                                            className="rounded-md border-2 border-black bg-[#EFF1F6] p-2 "
-                                            onChange={""}
-                                            // input="text"
-                                            value="  December 13, 2023"
-                                        />
+                                        {/*<DatePicker*/}
+                                        {/*    label={['year', 'month', 'day']}*/}
+                                        {/*    views={['year', 'month', 'day']}*/}
+                                        {/*    className="rounded-md border-2 border-black bg-[#EFF1F6] p-2 "*/}
+                                        {/*    onChange:any ={({}: { date: any, event: any }) => {*/}
+                                        {/*        // Handle the date change here*/}
+                                        {/*    }}*/}
+                                        {/*    input="text"*/}
+                                        {/*    value="  December 13, 2023"*/}
+                                        {/*/>*/}
 
                                     </div>
                                 </div>
@@ -112,8 +108,6 @@ function DropdownMenu (){
                                 </div>
                             </div>
 
-
-
                          </div>
                         <div className="mt-[8em] mx-4 flex justify-between ">
                             <button
@@ -121,7 +115,6 @@ function DropdownMenu (){
                                 className="bg-[#EFF1F6] text-black my-4 text-[16px] p-2 font-Degular rounded-full flex"
                             >
                                 <span className="mx-10 text-[16px]">Clear</span>
-
 
                             </button>
                             <button
@@ -138,6 +131,7 @@ function DropdownMenu (){
 
 
                     </Menu.Items>
+                    </div>
                 </Transition>
 
             </Menu>
