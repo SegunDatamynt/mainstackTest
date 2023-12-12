@@ -3,16 +3,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import vitePluginRequire from "vite-plugin-require";
+import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs'
 
-// https://vitejs.dev/config/
+
+
 export default defineConfig({
-  plugins: [react(), vitePluginRequire.default()],
+  plugins: [
+      react(),
+    vitePluginRequire(),
+    esbuildCommonjs(['react-calendar','react-date-picker','CanvasJSReact'])
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
-    // you might want to disable it, if you don't have tests that rely on CSS
-    // since parsing CSS is slow
+
     css: true,
   },
 })

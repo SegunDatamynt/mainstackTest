@@ -20,8 +20,7 @@ const FinancialGraph = () => {
                 console.log(response.data);
 
                  response.data.forEach((transaction: { metadata: any; }) => {
-                    // Check if metadata exists before accessing name and product_name
-                    const { metadata } = transaction;
+                     const { metadata } = transaction;
                     if (metadata) {
                         if (metadata?.name) {
                             // console.log(metadata.name);
