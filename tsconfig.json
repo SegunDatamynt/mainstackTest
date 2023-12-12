@@ -4,7 +4,7 @@
     "module": "commonjs",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "types": ["vitest/globals,jest\", \"node\", \"react\", \"react-dom/test-utils"],
+    "types": ["vitest/globals"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
